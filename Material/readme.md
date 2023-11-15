@@ -142,7 +142,7 @@ printf("Hello World!");
 - Para crear una variable, especifique el tipo y asígnele un valor:
 
 ```c
-type variableName = value;*
+type variableName = value;
 ```
 
 - *type*          Tipo de variable, cmo int o float.
@@ -214,21 +214,97 @@ char myLetter = 'D';
 printf("My number is %d and my letter is %c", myNum, myLetter);
 ```
 
+### Cambiar valores de variables
 
+**Nota:** Si asigna un nuevo valor a una variable existente, sobrescribirá el valor anterior
 
+```c
+int myNum = 15;  // myNum is 15
+myNum = 10;  // Now myNum is 10
+```
 
+- También se le puede asignar el valor de una variable a otra:
 
+```c
+int myNum = 15;
 
+int myOtherNum = 23;
 
+// Assign the value of myOtherNum (23) to myNum
+myNum = myOtherNum;
 
+// myNum is now 23, instead of 15
+printf("%d", myNum);
+```
 
+- O copie valores a variables vacías:
 
+```c
+// Create a variable and assign the value 15 to it
+int myNum = 15;
 
+// Declare a variable without assigning it a value
+int myOtherNum;
 
+// Assign the value of myNum to myOtherNum
+myOtherNum = myNum;
 
+// myOtherNum now has 15 as a value
+printf("%d", myOtherNum);
+```
 
+### Agregar variables juntas
 
+- Para agregar una variable junto a otra variable puede utiliza el operador *+*:
 
+```c
+int x = 5;
+int y = 6;
+int sum = x + y;
+printf("%d", sum);
+```
+
+### Declarar múltiples variables
+
+- Para declarar más de una variable del mismo tipo se utiliza una lista separada por comas:
+
+```c
+int x = 5, y = 6, z = 50;
+printf("%d", x + y + z);
+```
+
+- También se puede asignar el mismo valor a múltiples variables del mismo tipo:
+
+```c
+int x, y, z;
+x = y = z = 50;
+printf("%d", x + y + z);
+```
+
+### Nombres de las variables
+
+- Todas las variables C deben identificarse con nombres únicos. Estos nombres únicos se denominan identificadores.
+- Los identificadores pueden ser nombres cortos (como xey) o nombres más descriptivos (edad, suma, volumen total).
+
+**Nota:** Se recomienda utilizar nombres descriptivos para crear código comprensible y mantenible:
+
+```c
+// Good
+int minutesPerHour = 60;
+
+// OK, but not so easy to understand what m actually is
+int m = 60;
+```
+
+- Reglas generales para nombrar variables:
+
+  1. Los nombres pueden contener letras, dígitos y guiones bajos.
+  2. Los nombres deben comenzar con una letra o un guión bajo (_)
+  3. Los nombres distinguen entre mayúsculas y minúsculas (*myVar* y *myvar* son variables distintas)
+  4. Los nombres no pueden contener espacios en blanco ni caracteres especiales como !, #, %, etc.
+  5. Las palabras reservadas (como int) no se pueden utilizar como nombres.
+
+## ** Data Types in C**
 
 
 
