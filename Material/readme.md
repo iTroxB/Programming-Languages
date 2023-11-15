@@ -445,12 +445,38 @@ float sum = (float) num1 / num2;
 printf("%.1f", sum); // 2.5
 ```
 
+## **Constants in C**
 
+- Para que otros (o uno mismo) no puedan cambiar los valores de las variables existentes, puede utilizar la palabra clave const. Esto declarará la variable como "constante", lo que significa que no se puede modificar y es de solo lectura:
 
+```c
+const int myNum = 15;  // myNum will always be 15
+myNum = 10;  // error: assignment of read-only variable 'myNum'
+```
 
+- Siempre se debe declarar la variable como constante cuando tenga valores que es poco probable que cambien:
 
+```c
+const int minutesPerHour = 60;
+const float PI = 3.14;
+```
 
+### Notas sobre constantes
 
+- Cuando se declara una variable constante, se le debe asignar un valor inmediatamente y no después, como en variables sin const:
+
+```c
+const int minutesPerHour = 60; // Esto funciona
+
+const int minutesPerHour; // Esto NO funciona
+minutesPerHour = 60; // error
+```
+
+- Una buena práctica es declararlas en mayúsculas. No es obligatorio, pero es útil para facilitar la lectura del código y es común para los programadores de C:
+
+```c
+const int BIRTHYEAR = 1980;
+```
 
 
 
