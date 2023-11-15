@@ -23,8 +23,8 @@
 
 - Lo hago desde una máquina virtual con OS ArchLinux, en la cual poseo instalada los repositorios de gcc para la compilación
 
-  1. **COMPILAR FICHERO file.c:**     gcc file.c       // Genera un fichero de compilado de nombre a.c
-  2. **COMPILAR FICHERO file.c Y GENERAR FICHERO DE SALIDA CON NOMBRE ESPECÍFICO:**     gcc file.c -o filename.c
+  1. **COMPILAR FICHERO file.c:**          gcc file.c          // Genera un fichero de compilado de nombre a.c
+  2. **COMPILAR FICHERO file.c Y GENERAR FICHERO DE SALIDA CON NOMBRE ESPECÍFICO:**          gcc file.c -o filename.c
   3. **EJECUTAR FICHERO COMPILADO:** ./filename.c
 
 ## **Syntax in C**
