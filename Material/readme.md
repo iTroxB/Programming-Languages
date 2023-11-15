@@ -19,6 +19,14 @@
 - C++ fue desarrollado como una extensión de C y ambos lenguajes tienen casi la misma sintaxis.
 - La principal diferencia entre C y C++ es que C++ admite clases y objetos, mientras que C no.
 
+### Trabajar con C
+
+- Lo hago desde una máquina virtual con OS ArchLinux, en la cual poseo instalada los repositorios de gcc para la compilación
+
+  1. **COMPILAR FICHERO file.c:** gcc file.c // Genera un fichero de compilado de nombre a.c
+  2. **COMPILAR FICHERO file.c Y GENERAR FICHERO DE SALIDA CON NOMBRE ESPECÍFICO:** gcc file.c -o filename.c
+  3. **EJECUTAR FICHERO COMPILADO:** ./filename.c
+
 ## **Syntax in C**
 
 ### Sintaxis
