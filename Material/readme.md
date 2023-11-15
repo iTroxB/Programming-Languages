@@ -1,6 +1,6 @@
-# C
+# **C**
 
-## C Introduction
+## **C Introduction**
 
 ### ¿Qué es C?
 
@@ -19,7 +19,7 @@
 - C++ fue desarrollado como una extensión de C y ambos lenguajes tienen casi la misma sintaxis.
 - La principal diferencia entre C y C++ es que C++ admite clases y objetos, mientras que C no.
 
-## C Syntax
+## **C Syntax**
 
 ### Sintaxis
 
@@ -43,3 +43,118 @@ int main() {
 
 Nota: El cuerpo de int main()también podría escribirse como:
     int main(){printf("Hello World!");return 0;}
+
+## **C Output**
+
+### Imprimir una salida
+
+- Para generar valores o imprimir texto en C, puede usar la función printf(). Puedes utilizar tantas funciones printf() como quieras. Sin embargo , tenga en cuenta que no inserta una nueva línea al final del resultado:
+
+```c
+#include <stdio.h>
+
+int main() {
+  printf("Hello World!");
+  return 0;
+}
+```
+
+### Nueva línea 
+
+- Para insertar una nueva línea, puedes usar el carácter \n:
+
+```c
+#include <stdio.h>
+
+int main() {
+  printf("Hello World!\n");
+  printf("I am learning C.");
+  return 0;
+}
+```
+
+- También puede generar varias líneas con una sola función printf(). Sin embargo, esto podría hacer que el código sea más difícil de leer:
+
+```c
+#include <stdio.h>
+
+int main() {
+  printf("Hello World!\nI am learning C.\nAnd it is awesome!");
+  return 0;
+}
+```
+
+**Consejo:** Dos caracteres \n uno detrás del otro crearán una línea en blanco:
+
+```c
+#include <stdio.h>
+
+int main() {
+  printf("Hello World!\n\n");
+  printf("I am learning C.");
+  return 0;
+}
+```
+
+- \n    Agrega un salto de línea
+- \n\n  Agrega una línea en blanco
+- \t	  Agrega un tabulado al comienzo de la línea
+- \\	  Inserta un carácter de barra invertida (\)	
+- \"	  Inserta un carácter de comilla doble
+
+## **C Coments**
+
+### Comentarios de una línea
+
+- Los comentarios de una sola línea comienzan con dos barras diagonales ( //).
+- Este ejemplo utiliza un comentario de una sola línea antes de una línea de código:
+
+```c
+// This is a comment
+printf("Hello World!");
+
+printf("Hello World!"); // This is a comment
+```
+
+### Comentarios de varias líneas
+
+- Los comentarios de varias líneas comienzan con /* y terminan con */. El compilador ignorará cualquier texto entre /*y :*/
+
+```c
+/* The code below will print the words Hello World!
+to the screen, and it is amazing */
+printf("Hello World!");
+```
+
+## Variables in C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
