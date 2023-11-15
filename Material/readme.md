@@ -324,14 +324,12 @@ printf("%c\n", myLetter);
 
 - El tipo de datos especifica el tamaño y el tipo de información que almacenará la variable. Los más básicos son:
 
-|------------------------------------------------------------------------------------------------------------------------------------------|
 | **Data Type** | **Size**         | **Description**                                                                                       |
 |---------------|------------------|-------------------------------------------------------------------------------------------------------|
 | int           | 2 or 4 bytes     | Stores whole numbers, without decimals                                                                |
 | float         | 4 bytes          | Stores fractional numbers, containing one or more decimals. Sufficient for storing 6-7 decimal digits |
 | double        | 8 bytes          | Stores fractional numbers, containing one or more decimals. Sufficient for storing 15 decimal digits  |
 | char          | 1 byte           | Stores a single character/letter/number, or ASCII values                                              |
-|------------------------------------------------------------------------------------------------------------------------------------------|
 
 ```c
 int myNum = 5; // 2 or 4 bytes & %d or %i
@@ -344,7 +342,6 @@ double myDouble = 19.99; // 8 bytes & %lf
 
 - Existen diferentes especificadores de formato para cada tipo de datos. Éstos son algunos de ellos:
 
-|----------------------------------------------------------------------------------------------------|
 | **Format Specifier** | **Data Type**                                                               |
 |----------------------|-----------------------------------------------------------------------------|
 | %d or %i             | int                                                                         |
@@ -352,7 +349,6 @@ double myDouble = 19.99; // 8 bytes & %lf
 | %lf                  | double                                                                      |
 | %c                   | char                                                                        |
 | %s                   | Used for strings (text), which you will learn more about in a later chapter |
-|----------------------------------------------------------------------------------------------------|
 
 ### Establecer precisión decimal
 
