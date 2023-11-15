@@ -41,8 +41,10 @@ int main() {
 - Línea 5: return 0 finaliza la main()función.
 - Línea 6: No olvide agregar la llave de cierre }para finalizar la función principal.
 
-Nota: El cuerpo de int main()también podría escribirse como:
-    int main(){printf("Hello World!");return 0;}
+Nota: El cuerpo de int main() también podría escribirse como:
+```c
+int main(){printf("Hello World!");return 0;}
+```
 
 ## **C Output**
 
@@ -118,7 +120,7 @@ printf("Hello World!"); // This is a comment
 
 ### Comentarios de varias líneas
 
-- Los comentarios de varias líneas comienzan con /* y terminan con */. El compilador ignorará cualquier texto entre /*y :*/
+- Los comentarios de varias líneas comienzan con /* y terminan con */. El compilador ignorará cualquier texto entre /* y :*/
 
 ```c
 /* The code below will print the words Hello World!
@@ -126,7 +128,124 @@ to the screen, and it is amazing */
 printf("Hello World!");
 ```
 
-## Variables in C
+## **Variables in C**
+
+- Las variables son contenedores para almacenar valores de datos, como números y caracteres.
+- En C, existen diferentes tipos de variables (definidas con diferentes palabras clave), por ejemplo:
+
+1. int    Almacena números enteros (números enteros), sin decimales, como 123 o -123
+2. float  Almacena números de coma flotante, con decimales, como 19.99 o -19.99
+3. cha    Almacena caracteres individuales, como 'a' o 'B'. Los valores de caracteres están entre comillas simples.
+
+### Declaración (creación) de variables
+
+- Para crear una variable, especifique el tipo y asígnele un valor:
+
+```c
+type variableName = value;*
+```
+
+- *type*          Tipo de variable, cmo int o float.
+- *variableName*  Nombre de la variable (como x o miNombre).
+- *=*             El signo igual se utiliza para asignar un valor a la variable.
+
+```c
+int myNum = 15;
+```
+
+- También puedes declarar una variable sin asignar el valor y asignar el valor más tarde:
+
+```c
+// Declare a variable
+int myNum;
+
+// Assign a value to the variable
+myNum = 15;
+```
+
+### Variables de salida
+
+- Se puede generar la salida de valores o imprimir texto con la función printf():
+- En muchos otros lenguajes de programación (como Python , Java y C++ ), normalmente se usa una función de impresión para mostrar el valor de una variable. Sin embargo, esto no es posible en C:
+
+```c
+int myNum = 15;
+printf(myNum);  // Nothing happens
+```
+
+- Para imprimir variables en C se utilizan los especificadores de formato.
+
+### Especificadores de formato
+
+- Los especificadores de formato se utilizan junto con la función printf() para indicarle al compilador qué tipo de datos está almacenando la variable. Básicamente es un marcador de posición para el valor de la variable.
+- Un especificador de formato comienza con un signo de porcentaje %, seguido de un carácter. Por ejemplo, para generar el valor de una variable int se debe usar el especificador de formato *%d* o *%i* entre comillas dobles, dentro de la función printf():
+
+```c
+int myNum = 15;
+printf("%d", myNum);  // Outputs 15
+```
+
+- Para imprimir otros tipo se utiliza lo siguiente:
+
+```c
+int myNum = 15;            // Integer (whole number)
+float myFloatNum = 5.99;   // Floating point number
+char myLetter = 'D';       // Character
+
+// Print variables
+printf("%d\n", myNum);
+printf("%i\n", myNum);
+printf("%f\n", myFloatNum);
+printf("%c\n", myLetter);
+```
+
+- Para combinar texto y una variable, sepárelos con una coma dentro de la función printf():
+
+```c
+int myNum = 15;
+printf("My favorite number is: %d", myNum);
+```
+
+- Para imprimir diferentes tipos en una sola función printf():
+
+```c
+int myNum = 15;
+char myLetter = 'D';
+printf("My number is %d and my letter is %c", myNum, myLetter);
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
