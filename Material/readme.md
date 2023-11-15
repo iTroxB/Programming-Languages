@@ -304,7 +304,7 @@ int m = 60;
   4. Los nombres no pueden contener espacios en blanco ni caracteres especiales como !, #, %, etc.
   5. Las palabras reservadas (como int) no se pueden utilizar como nombres.
 
-## ** Data Types in C**
+## **Data Types in C**
 
 
 
