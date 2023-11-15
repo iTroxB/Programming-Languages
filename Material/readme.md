@@ -19,7 +19,7 @@
 - C++ fue desarrollado como una extensión de C y ambos lenguajes tienen casi la misma sintaxis.
 - La principal diferencia entre C y C++ es que C++ admite clases y objetos, mientras que C no.
 
-## **C Syntax**
+## **Syntax in C**
 
 ### Sintaxis
 
@@ -104,7 +104,7 @@ int main() {
 - \\	  Inserta un carácter de barra invertida (\)	
 - \"	  Inserta un carácter de comilla doble
 
-## **C Coments**
+## **C Comments**
 
 ### Comentarios de una línea
 
@@ -306,39 +306,148 @@ int m = 60;
 
 ## **Data Types in C**
 
+- Una variable en C debe ser un tipo de datos específico y debes usar un especificador de formato dentro de la función  printf() para poder mostrarlo en la salida:
 
+```c
+// Create variables
+int myNum = 5;             // Integer (whole number)
+float myFloatNum = 5.99;   // Floating point number
+char myLetter = 'D';       // Character
 
+// Print variables
+printf("%d\n", myNum);
+printf("%f\n", myFloatNum);
+printf("%c\n", myLetter);
+```
 
+### Tipos de datos básicos
 
+- El tipo de datos especifica el tamaño y el tipo de información que almacenará la variable. Los más básicos son:
 
+|------------------------------------------------------------------------------------------------------------------------------------------|
+| **Data Type** | **Size**         | **Description**                                                                                       |
+|---------------|------------------|-------------------------------------------------------------------------------------------------------|
+| int           | 2 or 4 bytes     | Stores whole numbers, without decimals                                                                |
+| float         | 4 bytes          | Stores fractional numbers, containing one or more decimals. Sufficient for storing 6-7 decimal digits |
+| double        | 8 bytes          | Stores fractional numbers, containing one or more decimals. Sufficient for storing 15 decimal digits  |
+| char          | 1 byte           | Stores a single character/letter/number, or ASCII values                                              |
+|------------------------------------------------------------------------------------------------------------------------------------------|
 
+```c
+int myNum = 5; // 2 or 4 bytes & %d or %i
+float myFloatNum = 5.99; // 4 bytes & %f
+char myLetter = 'D'; // 1 byte & %c
+double myDouble = 19.99; // 8 bytes & %lf
+```
 
+### Especificadores de formato básicos
 
+- Existen diferentes especificadores de formato para cada tipo de datos. Éstos son algunos de ellos:
 
+|----------------------------------------------------------------------------------------------------|
+| **Format Specifier** | **Data Type**                                                               |
+|----------------------|-----------------------------------------------------------------------------|
+| %d or %i             | int                                                                         |
+| %f                   | float                                                                       |
+| %lf                  | double                                                                      |
+| %c                   | char                                                                        |
+| %s                   | Used for strings (text), which you will learn more about in a later chapter |
+|----------------------------------------------------------------------------------------------------|
 
+### Establecer precisión decimal
 
+- Al imprimir un número de punto flotante el resultado entrega muchos dígitos después del punto decimal:
 
+```c
+float myFloatNum = 3.5;
+double myDoubleNum = 19.99;
 
+printf("%f\n", myFloatNum); // Outputs 3.500000
+printf("%lf", myDoubleNum); // Outputs 19.990000
+```
 
+- Para establecer la precisión decimal se puede usar un punto (.) seguido de un número que especifica cuántos dígitos deben mostrarse después del punto decimal:
 
+```c
+float myFloatNum = 3.5;
 
+printf("%f\n", myFloatNum); // Default will show 6 digits after the decimal point
+printf("%.1f\n", myFloatNum); // Only show 1 digit
+printf("%.2f\n", myFloatNum); // Only show 2 digits
+printf("%.4f", myFloatNum);   // Only show 4 digits
+```
 
+## **Type Conversion in C**
 
+- A veces, es necesario convertir el valor de un tipo de datos a otro. Esto se conoce como conversión de tipos. Por ejemplo, si intenta dividir dos números enteros (5 entre 2), esperaría que el resultado fuera 2.5. Pero como estamos trabajando con números enteros (y no con valores de punto flotante), el siguiente ejemplo simplemente generará 2:
 
+```c
+int x = 5;
+int y = 2;
+int sum = 5 / 2;
 
+printf("%d", sum); // Outputs 2
+```
 
+- Para obtener el resultado correcto, necesita saber cómo funciona la conversión de tipos. Hay dos tipos de conversión en C:
 
+  1. Conversión implícita (automáticamente)
+  2. Conversión explícita (manualmente)
 
+### Conversión Implícita
 
+- El compilador realiza automáticamente la conversión implícita cuando asigna un valor de un tipo a otro. Por ejemplo, si asigna un int valor a un tipo float:
 
+```c
+// Automatic conversion: int to float
+float myFloat = 9;
 
+printf("%f", myFloat); // 9.000000
+```
 
+- Como se aprecia, el compilador convierte automáticamente el valor int 9 en un valor flotante de 9.000000. Esto puede ser arriesgado, ya que podría perder el control sobre valores específicos en determinadas situaciones. Especialmente si fuera al revés: el siguiente ejemplo convierte automáticamente el valor flotante 9.99 en un valor int de 9:
 
+```c
+// Automatic conversion: float to int
+int myInt = 9.99;
 
+printf("%d", myInt); // 9
+```
 
+- ¿Qué pasó con .99? ¡Es posible que queramos esos datos en nuestro programa! Así que cuidado. Otro ejemplo, se dividen dos números enteros: 5 entre 2 con resultado 2.5. Y como sabes desde el principio de esta página, si almacenas la suma como un número entero, el resultado solo mostrará el número 2. Por lo tanto, sería mejor almacenar la suma como a float o double.
 
+```c
+float sum = 5 / 2;
 
+printf("%f", sum); // 2.000000
+```
 
+### Conversión Explícita
+
+- La conversión explícita se realiza manualmente colocando el tipo entre paréntesis delante del valor. Considerando el problema del ejemplo anterior, ahora podemos obtener el resultado correcto:
+
+```c
+// Manual conversion: int to float
+float sum = (float) 5 / 2;
+
+printf("%f", sum); // 2.500000
+```
+
+- También se puede colocar el tipo delante de una variable:
+
+```c
+int num1 = 5;
+int num2 = 2;
+float sum = (float) num1 / num2;
+
+printf("%f", sum); // 2.500000
+
+int num1 = 5;
+int num2 = 2;
+float sum = (float) num1 / num2;
+
+printf("%.1f", sum); // 2.5
+```
 
 
 
