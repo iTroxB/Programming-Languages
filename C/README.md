@@ -43,3 +43,7 @@
   * Else
   * Else if
   * Short hand if else
+- **Switch in C**
+ * Switch
+ * Break
+ * Default
