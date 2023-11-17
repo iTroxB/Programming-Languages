@@ -940,30 +940,117 @@ do {
 while (i < 5);
 ```
 
+## **For loop**
 
+### For
 
+- Cuando sepa exactamente cuántas veces desea recorrer un bloque de código, use el bucle **for** en lugar de un bucle while:
 
+```c
+for (statement 1; statement 2; statement 3) {
+  // code block to be executed
+}
+```
 
+- La declaración 1 se ejecuta (una vez) antes de la ejecución del bloque de código.
+- La declaración 2 define la condición para ejecutar el bloque de código.
+- La declaración 3 se ejecuta (cada vez) después de que se haya ejecutado el bloque de código.
 
+- El siguiente ejemplo imprimirá los números del 0 al 4:
 
+```c
+int i;
 
+for (i = 0; i < 5; i++) {
+  printf("%d\n", i);
+}
+```
 
+- Otro ejemplo, el cual solo imprime valores pares entre 0 y 10:
 
+```c
+for (i = 0; i <= 10; i = i + 2) {
+  printf("%d\n", i);
+}
+```
 
+### Bucles anidados
 
+- También es posible colocar un bucle dentro de otro bucle. Esto se llama bucle anidado.
+- El bucle interno se ejecutará una vez por cada iteración del bucle externo:
 
+```c
+int i, j;
 
+// Outer loop
+for (i = 1; i <= 2; ++i) {
+  printf("Outer: %d\n", i);  // Executes 2 times
 
+  // Inner loop
+  for (j = 1; j <= 3; ++j) {
+    printf(" Inner: %d\n", j);  // Executes 6 times (2 * 3)
+  }
+}
+```
 
+## **Break & Continue in C**
 
+### Break
 
+- La declaración **break** se puede utilizar para salir de un bucle.
+- El siguiente ejemplo salta del bucle for cuando i es igual a 4:
 
+```c
+int i;
 
+for (i = 0; i < 10; i++) {
+  if (i == 4) {
+    break;
+  }
+  printf("%d\n", i);
+}
+```
 
+### Continue
 
+- La declaración ***continue** interrumpe una iteración en el bucle si se produce una condición específica, para luego continuar con la siguiente.
+- Este ejemplo omite el valor de 4:
 
+```c
+int i;
 
+for (i = 0; i < 10; i++) {
+  if (i == 4) {
+    continue;
+  }
+  printf("%d\n", i);
+}
+```
 
+### Break & continue en el bucle While
 
+- También se puede usar break y continue en bucles while:
 
+```c
+int i = 0;
 
+while (i < 10) {
+  if (i == 4) {
+    break;
+  }
+  printf("%d\n", i);
+  i++;
+}
+```
+```c
+int i = 0;
+
+while (i < 10) {
+  if (i == 4) {
+    i++;
+    continue;
+  }
+  printf("%d\n", i);
+  i++;
+}
+```
