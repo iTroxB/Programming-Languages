@@ -679,15 +679,125 @@ bool isPizzaTasty = true;
 printf("%d", isHamburgerTasty == isPizzaTasty);
 ```
 
+## **If & else in C**
 
+### Condiciones y declaraciones If
 
+- C tiene las siguientes declaraciones condicionales:
 
+  * Se utiliza **if** para especificar un bloque de código que se ejecutará, si se cumple una condición específica (true).
+  * Se utiliza **else** para especificar un bloque de código que se ejecutará, si se cumple la misma condición (false).
+  * Se utiliza **else if** para especificar una nueva condición para probar, si la primera condición es false.
+  * Se utiliza **switch** para especificar muchos bloques alternativos de código que se ejecutarán a raíz de una desición tomada previamente.
 
+### If
 
+- Utilice la declaración **if** para especificar un bloque de código que se ejecutará si una condición es true.
 
+```c
+if (condition) {
+  // block of code to be executed if the condition is true
+}
+```
 
+- Tenga en cuenta que if está en letras minúsculas. Las letras mayúsculas (If o IF) generarán un error. Por ejemplo, se prueban dos valores para averiguar si 20 es mayor que 18. Si la condición es true, imprima algo de texto:
 
+```c
+if (20 > 18) {
+  printf("20 is greater than 18");
+}
+```
 
+- También se pueden probar variables para probar si x es mayor que y (usando el operador **>**).
+
+```c
+Ejemplo
+int x = 20;
+int y = 18;
+if (x > y) {
+  printf("x is greater than y");
+}
+```
+
+### Else
+
+- Utilice la declaración **else** para especificar un bloque de código que se ejecutará si la condición inicial tiene como resultado false.
+
+```c
+if (condition) {
+  // block of code to be executed if the condition is true
+} else {
+  // block of code to be executed if the condition is false
+}
+```
+
+- Por ejemplo, el tiempo (20) es mayor que 18, por lo que la condición es false.
+
+```c
+int time = 20;
+if (time < 18) {
+  printf("Good day.");
+} else {
+  printf("Good evening.");
+}
+// Outputs "Good evening."
+```
+
+### Else if
+
+- Utilice la declaración **else if** para especificar una nueva condición si la primera condición es false.
+
+```c
+if (condition1) {
+  // block of code to be executed if condition1 is true
+} else if (condition2) {
+  // block of code to be executed if the condition1 is false and condition2 is true
+} else {
+  // block of code to be executed if the condition1 is false and condition2 is false
+}
+```
+
+- Por ejemplo, el tiempo (22) es mayor que 10, por lo que la primera condición es false. La siguiente condición, en la declaración else if, también es false, por lo que pasamos a la condición else, ya que la condición1 y la condición2 son ambas false. Sin embargo, si la hora fuera las 14, el programa imprimiría "Buenos días".
+
+```c
+int time = 22;
+if (time < 10) {
+  printf("Good morning.");
+} else if (time < 20) {
+  printf("Good day.");
+} else {
+  printf("Good evening.");
+}
+// Outputs "Good evening."
+```
+
+### Short hand if else
+
+- También existe una abreviatura **if else** que se conoce como operador ternario, porque consta de tres operandos. Se puede utilizar para reemplazar varias líneas de código con una sola línea. A menudo se utiliza para reemplazar declaraciones simples if else:
+
+```c
+variable = (condition) ? expressionTrue : expressionFalse;
+```
+
+- Esto funciona de la siguiente manera. En lugar de escribir:
+
+```c
+int time = 20;
+if (time < 18) {
+  printf("Good day.");
+} else {
+  printf("Good evening.");
+}
+```
+
+- se escribe:
+
+```c
+int time = 20;
+(time < 18) ? printf("Good day.") : printf("Good evening.");
+```
+
+- Aquí la declaración principal **(time < 18)** se asume como sentencia **if**. El caracter **?** toma la función de un **entonces**. Finalmente, el caracter **:** se utiliza como un **else**
 
 
 
