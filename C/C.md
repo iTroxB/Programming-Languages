@@ -886,3 +886,84 @@ switch (day) {
 ```
 
 - La palabra clave predeterminada debe usarse como última declaración en el cambio y no necesita interrupción.
+
+## **While loop**
+
+### Bucles
+
+- Los bucles pueden ejecutar un bloque de código siempre que se alcance una condición específica.
+- Los bucles son útiles porque ahorran tiempo, reducen errores y hacen que el código sea más legible.
+
+### While
+
+- El bucle **while** recorre un bloque de código siempre que una condición especificada sea true:
+
+```c
+while (condition) {
+  // code block to be executed
+}
+```
+
+- En el siguiente ejemplo, el código del bucle se ejecutará una y otra vez, siempre que una variable (i) sea menor que 5:
+
+```c
+int i = 0;
+
+while (i < 5) {
+  printf("%d\n", i);
+  i++;
+}
+```
+
+- No olvides aumentar la variable utilizada en la condición **i++**, de lo contrario el bucle será infinito y no acabará nunca. Esto puede generar un aumento drástico en el consumo de memoria utilizada para el cálculo.
+
+### Do/While
+
+- El bucle **do/while** es una variante del bucle **while**. Este bucle ejecutará el bloque de código una vez antes de verificar si la condición es verdadera, luego repetirá el bucle mientras la condición sea verdadera.
+
+```c
+do {
+  // code block to be executed
+}
+while (condition);
+```
+
+- El siguiente ejemplo utiliza un bucle do/while, el cual se ejecuta al menos una vez, incluso si la condición es falsa, ya que el bloque de código se ejecuta antes de que se pruebe la condición:
+
+```c
+int i = 0;
+
+do {
+  printf("%d\n", i);
+  i++;
+}
+while (i < 5);
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
