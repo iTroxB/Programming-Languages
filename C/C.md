@@ -110,11 +110,11 @@ int main() {
 }
 ```
 
-- \n    Agrega un salto de línea
-- \n\n  Agrega una línea en blanco
-- \t	  Agrega un tabulado al comienzo de la línea
-- \\	  Inserta un carácter de barra invertida (\)	
-- \"	  Inserta un carácter de comilla doble
+- **\n** Agrega un salto de línea
+- **\n\n** Agrega una línea en blanco
+- **\t** Agrega un tabulado al comienzo de la línea
+- **\\** Inserta un carácter de barra invertida (\)	
+- **\"** Inserta un carácter de comilla doble
 
 ## **C Comments**
 
@@ -145,9 +145,9 @@ printf("Hello World!");
 - Las variables son contenedores para almacenar valores de datos, como números y caracteres.
 - En C, existen diferentes tipos de variables (definidas con diferentes palabras clave), por ejemplo:
 
-  * int    Almacena números enteros (números enteros), sin decimales, como 123 o -123
-  * float  Almacena números de coma flotante, con decimales, como 19.99 o -19.99
-  * char   Almacena caracteres individuales, como 'a' o 'B'. Los valores de caracteres están entre comillas simples.
+  * **int** Almacena números enteros (números enteros), sin decimales, como 123 o -123
+  * **float** Almacena números de coma flotante, con decimales, como 19.99 o -19.99
+  * **char** Almacena caracteres individuales, como 'a' o 'B'. Los valores de caracteres están entre comillas simples.
 
 ### Declaración (creación) de variables
 
@@ -157,9 +157,9 @@ printf("Hello World!");
 type variableName = value;
 ```
 
-- *type*          Tipo de variable, cmo int o float.
-- *variableName*  Nombre de la variable (como x o miNombre).
-- *=*             El signo igual se utiliza para asignar un valor a la variable.
+- **type** Tipo de variable, cmo int o float.
+- **variableName** Nombre de la variable (como x o miNombre).
+- **=** El signo igual se utiliza para asignar un valor a la variable.
 
 ```c
 int myNum = 15;
@@ -249,7 +249,7 @@ myNum = myOtherNum;
 printf("%d", myNum);
 ```
 
-- O copie valores a variables vacías:
+- ó copiar valores a variables vacías:
 
 ```c
 // Create a variable and assign the value 15 to it
@@ -798,3 +798,91 @@ int time = 20;
 ```
 
 - Aquí la declaración principal **(time < 18)** se asume como sentencia **if**. El caracter **?** toma la función de un **entonces**. Finalmente, el caracter **:** se utiliza como un **else**
+
+## **Switch in C**
+
+### Switch
+
+- En lugar de escribir muchas declaraciones **if..else**, se puede utilizar la declaración **switch**. Esta declaración selecciona uno de los muchos bloques de código que se ejecutarán:
+
+```c
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+```
+
+- Su funcionamiento se ejecuta de ls siguiente manera:
+
+  * La expresión **switch** se evalúa una vez.
+  * El valor de la expresión se compara con los valores de cada **case**.
+  * Si hay una coincidencia, se ejecuta el bloque de código asociado.
+  * La declaración **break** sale del bloque de cambio y detiene la ejecución del **switch**.
+  * La declaración **defaul** es opcional y especifica algún código que se ejecutará si no hay coincidencia de casos dentro del **switch**-
+
+- El siguiente ejemplo utiliza el número del día de la semana para calcular el nombre asignado a este:
+
+```c
+int day = 4;
+
+switch (day) {
+  case 1:
+    printf("Monday");
+    break;
+  case 2:
+    printf("Tuesday");
+    break;
+  case 3:
+    printf("Wednesday");
+    break;
+  case 4:
+    printf("Thursday");
+    break;
+  case 5:
+    printf("Friday");
+    break;
+  case 6:
+    printf("Saturday");
+    break;
+  case 7:
+    printf("Sunday");
+    break;
+}
+
+// Outputs "Thursday" (day 4)
+```
+
+### Break
+
+- Cuando C alcanza un **break** finaliza el proceso actual y sale del bloque que se encuentra en ejecución. Esto detiene por completo la ejecución de más código y pruebas de casos dentro del bloque.
+- Cuando se encuentra una coincidencia y el trabajo está hecho, es hora de hacer un descanso. No hay necesidad de realizar más pruebas.
+- Una interrupción puede ahorrar mucho tiempo de ejecución porque "ignora" la ejecución del resto del código en el bloque de cambio.
+
+### Default
+
+- AL ejecutar un **default** se especifica algún código que se ejecutará si no hay coincidencia de casos dentro del **switch**:
+
+```c
+int day = 4;
+
+switch (day) {
+  case 6:
+    printf("Today is Saturday");
+    break;
+  case 7:
+    printf("Today is Sunday");
+    break;
+  default:
+    printf("Looking forward to the Weekend");
+}
+
+// Outputs "Looking forward to the Weekend"
+```
+
+- La palabra clave predeterminada debe usarse como última declaración en el cambio y no necesita interrupción.
