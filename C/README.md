@@ -28,7 +28,7 @@
   * Conversión Implícita
   * Conversión Explícita
 - **Constants in C**
-- ** Operators in C**
+- **Operators in C**
   * Operadores aritméticos
   * Operadores de asignación
   * Operadores de comparación
