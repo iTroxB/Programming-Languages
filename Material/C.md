@@ -607,6 +607,103 @@ printf("%lu\n", sizeof(myDouble));
 printf("%lu\n", sizeof(myChar));
 ```
 
+## **Booleans in C**
+
+- Muy a menudo en programación se necesita un tipo de datos que solo pueda tener uno de dos valores, como: SÍ ó NO, ENCENDIDO ó APAGADO, VERDADERO ó FALSO.
+- Para ello, C cuenta con un tipo de datos **bool**, el cual se conoce como booleanos. Los booleanos representan valores que son true o false.
+
+### Variables booleanas
+
+- En C, el tipo bool no es un tipo de datos integrado, como int o char.
+- Se introdujo en C99 y se debe importar el siguiente archivo de encabezado para usarlo:
+
+```c
+#include <stdbool.h>
+```
+- Una variable booleana se declara con la palabra clave bool y solo puede tomar los valores true o false:
+
+```c
+bool isProgrammingFun = true;
+bool isFishTasty = false;
+```
+
+- Antes de intentar imprimir las variables booleanas, debes saber que los valores booleanos se devuelven como números enteros:
+
+  * 1 (o cualquier otro número que no sea 0) representa **true**
+  * 0 representa **false**
+
+- Por lo tanto, debes usar el especificador de formato %d o %i para imprimir un valor booleano (ya se trata como int):
+
+```c
+// Create boolean variables
+bool isProgrammingFun = true;
+bool isFishTasty = false;
+
+// Return boolean values
+printf("%d", isProgrammingFun);   // Returns 1 (true)
+printf("%d", isFishTasty);        // Returns 0 (false)
+````
+
+### Comparar valores y variables
+
+- Comparar valores es útil en programación ya que nos ayuda a encontrar respuestas y plantear una mejor toma de decisiones.
+- Por ejemplo, puede utilizar un operador de comparación como el operador mayor que (>) para comparar dos valores:
+
+```c
+printf("%d", 10 > 9);  // Returns 1 (true) because 10 is greater than 9
+```
+
+- También se pueden comparar dos variables:
+
+```c
+int x = 10;
+int y = 9;
+printf("%d", x > y);
+```
+
+- En el siguiente ejemplo, se utiliza el operador igual a (==) para comparar diferentes valores:
+
+```c
+printf("%d", 10 == 10); // Returns 1 (true), because 10 is equal to 10
+printf("%d", 10 == 15); // Returns 0 (false), because 10 is not equal to 15
+printf("%d", 5 == 55);  // Returns 0 (false) because 5 is not equal to 55
+```
+
+- Por otra parte, no solo se limita a comparar números. También se pueden comparar variables booleanas, o incluso estructuras especiales, como matrices:
+
+```c
+bool isHamburgerTasty = true;
+bool isPizzaTasty = true;
+
+// Find out if both hamburger and pizza is tasty
+printf("%d", isHamburgerTasty == isPizzaTasty);
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
