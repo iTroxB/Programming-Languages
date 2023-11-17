@@ -361,6 +361,7 @@ double myDouble = 19.99; // 8 bytes & %lf
 | %lf                  | double                                                                      |
 | %c                   | char                                                                        |
 | %s                   | Used for strings (text), which you will learn more about in a later chapter |
+| %lu                  | unsigned long (sizeof)                                                      |
 
 ### Establecer precisión decimal
 
@@ -514,44 +515,97 @@ int sum3 = sum2 + sum2;     // 800 (400 + 400)
   * Operadores logicos
   * Operadores bit a bit
 
+### Operadores aritméticos
 
+- Los operadores aritméticos se utilizan para realizar operaciones matemáticas comunes.
 
+| **Operator** | **Name**       | **Description**                        | **Example** |
+|--------------|----------------|----------------------------------------|-------------|
+| +            | Addition       | Adds together two values               | x + y       |
+| -            | Subtraction    | Subtracts one value from another       | x - y       |
+| *            | Multiplication | Multiplies two values                  | x * y       |
+| /            | Division       | Divides one value by another           | x / y       |
+| %            | Modulus        | Returns the division remainder         | x % y       |
+| ++           | Increment      | Increases the value of a variable by 1 | ++x         |
+| --           | Decrement      | Decreases the value of a variable by 1 | --x         |
 
+### Operadores de asignación
 
+- Los operadores de asignación se utilizan para asignar valores a variables. En el siguiente ejemplo, utilizamos el operador de asignación **=** para asignar el valor 10 a una variable llamada x:
 
+```c
+int x = 10;
+```
 
+- El operador de asignación de suma **+=** agrega un valor a una variable:
 
+```c
+int x = 10;
+x += 5;
+```
 
+- Una lista de todos los operadores de asignación:
 
+| **Operator** | **Example**       | **Same As** |
+|--------------|----------------|----------------|
+| =            | x = 5          | x = 5          |
+| +=           | x += 3	        | x = x + 3      |
+| -=           | x -= 3	        | x = x - 3      |
+| *=           | x *= 3	        | x = x * 3      |
+| /=           | x /= 3	        | x = x / 3      |
+| %=           | x %= 3	        | x = x % 3      |
+| &=           | x &= 3	        | x = x & 3      |
+| |=           | x |= 3	        | x = x | 3      |
+| ^=           | x ^= 3	        | x = x ^ 3      |
+| >>=          | x >>= 3	      | x = x >> 3     |
+| <<=          | x <<= 3	      | x = x << 3     |
 
+### Operadores de comparación
 
+- Los operadores de comparación se utilizan para comparar dos valores o variables. El valor de retorno de una comparación es 1 o 0, lo que significa verdadero o falso. Estos valores se conocen como valores booleanos. En el siguiente ejemplo, utilizamos el operador mayor que > para saber si 5 es mayor que 3:
 
+```c
+int x = 5;
+int y = 3;
+printf("%d", x > y); // returns 1 (true) because 5 is greater than 3
+```
 
+- Una lista de todos los operadores de comparación:
 
+| **Operator** | **Name**                 | **Example** |
+|--------------|--------------------------|-------------|
+| ==           | Equal to	                | x == y      |
+| !=           | Not equal	              | x != y      |
+| >            | Greater than	            | x > y       |
+| <            | Less than	              | x < y       |
+| >=           | Greater than or equal to | x >= y      |
+| <=           | Less than or equal to	  | x <= y      |
 
+### Operadores lógicos
 
+- También puede probar valores verdaderos o falsos con operadores lógicos. Los operadores lógicos se utilizan para determinar la lógica entre variables o valores:
 
+| **Operator** | **Name**    | **Description**                                         | **Example**        |
+|--------------|------ ------|---------------------------------------------------------|--------------------|
+| &&           | Logical and | Returns true if both statements are true                | x < 5 &&  x < 10   |
+| ||           | Logical or  | Returns true if one of the statements is true           | x < 5 || x < 4     |
+| !            | Logical not | Reverse the result, returns false if the result is true | !(x < 5 && x < 10) |
 
+### Tamaño del operador
 
+- El tamaño de la memoria (en bytes) de un tipo de datos o de una variable se puede encontrar con el size of operador:
 
+```c
+int myInt;
+float myFloat;
+double myDouble;
+char myChar;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+printf("%lu\n", sizeof(myInt));
+printf("%lu\n", sizeof(myFloat));
+printf("%lu\n", sizeof(myDouble));
+printf("%lu\n", sizeof(myChar));
+```
 
 
 
