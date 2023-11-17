@@ -490,6 +490,69 @@ minutesPerHour = 60; // error
 const int BIRTHYEAR = 1980;
 ```
 
+## **Operators in C**
+
+- Los operadores se utilizan para realizar operaciones con variables y valores. En el siguiente ejemplo, utilizamos el + operador para sumar dos valores:
+
+```c
+int myNum = 100 + 50;
+```
+
+- Aunque el operador **+**se usa a menudo para sumar dos valores, también se puede usar para sumar una variable y un valor, o una variable y otra variable:
+
+```c
+int sum1 = 100 + 50;        // 150 (100 + 50)
+int sum2 = sum1 + 250;      // 400 (150 + 250)
+int sum3 = sum2 + sum2;     // 800 (400 + 400)
+```
+
+- En C se dividen los operadores en los siguientes grupos:
+
+  * Operadores aritméticos
+  * Operadores de Asignación
+  * Operadores de comparación
+  * Operadores logicos
+  * Operadores bit a bit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
