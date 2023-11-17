@@ -145,9 +145,9 @@ printf("Hello World!");
 - Las variables son contenedores para almacenar valores de datos, como números y caracteres.
 - En C, existen diferentes tipos de variables (definidas con diferentes palabras clave), por ejemplo:
 
-1. int    Almacena números enteros (números enteros), sin decimales, como 123 o -123
-2. float  Almacena números de coma flotante, con decimales, como 19.99 o -19.99
-3. cha    Almacena caracteres individuales, como 'a' o 'B'. Los valores de caracteres están entre comillas simples.
+  * int    Almacena números enteros (números enteros), sin decimales, como 123 o -123
+  * float  Almacena números de coma flotante, con decimales, como 19.99 o -19.99
+  * char   Almacena caracteres individuales, como 'a' o 'B'. Los valores de caracteres están entre comillas simples.
 
 ### Declaración (creación) de variables
 
@@ -310,11 +310,11 @@ int m = 60;
 
 - Reglas generales para nombrar variables:
 
-  1. Los nombres pueden contener letras, dígitos y guiones bajos.
-  2. Los nombres deben comenzar con una letra o un guión bajo (_)
-  3. Los nombres distinguen entre mayúsculas y minúsculas (*myVar* y *myvar* son variables distintas)
-  4. Los nombres no pueden contener espacios en blanco ni caracteres especiales como !, #, %, etc.
-  5. Las palabras reservadas (como int) no se pueden utilizar como nombres.
+  * Los nombres pueden contener letras, dígitos y guiones bajos.
+  * Los nombres deben comenzar con una letra o un guión bajo (_)
+  * Los nombres distinguen entre mayúsculas y minúsculas (*myVar* y *myvar* son variables distintas)
+  * Los nombres no pueden contener espacios en blanco ni caracteres especiales como !, #, %, etc.
+  * Las palabras reservadas (como int) no se pueden utilizar como nombres.
 
 ## **Data Types in C**
 
@@ -399,8 +399,8 @@ printf("%d", sum); // Outputs 2
 
 - Para obtener el resultado correcto, necesita saber cómo funciona la conversión de tipos. Hay dos tipos de conversión en C:
 
-  1. Conversión implícita (automáticamente)
-  2. Conversión explícita (manualmente)
+  * Conversión implícita (automáticamente)
+  * Conversión explícita (manualmente)
 
 ### Conversión Implícita
 
