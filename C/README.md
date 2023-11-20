@@ -47,3 +47,26 @@
   * Switch
   * Break
   * Default
+- **While loop**
+  * Bucles
+  * While
+  * Do/While
+- For loop
+  * For
+  * Bucles anidados
+- Break & Continue in C
+  * Break
+  * Continue
+  * Break & continue en el bucle While
+- Arrays in C
+  * Arrays
+  * Acceder a los elementos de una matriz
+  * Cambiar un elemento de matriz
+  * Recorrer una matriz
+  * Establecer tamaño de matriz
+- Multidimensional Arrays in C
+  * Matrices multidimensionales
+  * Matrices bidimensionales
+  * Acceder a los elementos de una matriz 2D
+  * Cambiar elementos en una matriz 2D
+  * Recorrer una matriz 2D
