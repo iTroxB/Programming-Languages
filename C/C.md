@@ -1054,3 +1054,148 @@ while (i < 10) {
   i++;
 }
 ```
+
+## **Arrays in C**
+
+### Arrays
+
+- Los arrays o matrices se utilizan para almacenar múltiples valores en una sola variable, en lugar de declarar variables separadas para cada valor.
+- Para crear una matriz se define el tipo de dato y se especifica el nombre de la matriz seguido de corchetes [].
+- Para insertar valores, use una lista separada por comas dentro de llaves:
+
+```c
+int myNumbers[] = {25, 50, 75, 100};
+```
+
+### Acceder a los elementos de una matriz
+
+- Para acceder a un elemento de la matriz consulte su número de índice. Los índices de matriz comienzan con 0: [0] es el primer elemento. [1] es el segundo elemento, etc.
+- Esta declaración accede al valor del primer elemento [0] en myNumbers:
+
+```c
+int myNumbers[] = {25, 50, 75, 100};
+printf("%d", myNumbers[0]);
+
+// Outputs 25
+```
+
+### Cambiar un elemento de matriz
+
+- Para cambiar el valor de un elemento específico, consulte el número de índice:
+
+```c
+myNumbers[0] = 33;
+Ejemplo
+int myNumbers[] = {25, 50, 75, 100};
+myNumbers[0] = 33;
+
+printf("%d", myNumbers[0]);
+
+// Now outputs 33 instead of 25
+```
+
+### Recorrer una matriz
+
+- Puede recorrer los elementos de la matriz con el bucle **for**.
+- El siguiente ejemplo genera todos los elementos de la matriz myNumbers:
+
+```c
+int myNumbers[] = {25, 50, 75, 100};
+int i;
+
+for (i = 0; i < 4; i++) {
+  printf("%d\n", myNumbers[i]);
+}
+```
+
+### Establecer tamaño de matriz
+
+- Otra forma común de crear matrices es especificar el tamaño de la matriz y agregar elementos más adelante:
+
+```c
+// Declare an array of four integers:
+int myNumbers[4];
+
+// Add elements
+myNumbers[0] = 25;
+myNumbers[1] = 50;
+myNumbers[2] = 75;
+myNumbers[3] = 100;
+```
+
+- Al utilizar este método se debe conocer el tamaño de la matriz para que el programa almacene suficiente memoria.
+- No se puede cambiar el tamaño de una matriz después de la creación.
+
+## **Multidimensional Arrays in C**
+
+### Matricves multidimensionales
+
+- Si se desea almacenar datos en forma tabular, como una tabla con filas y columnas, se debe usar una matriz multidimensional.
+- Estas básicamente son una matriz de matrices.
+- Las matrices pueden tener cualquier número de dimensiones.
+
+### Matrices bidimensionales
+
+- Una matriz 2D es una tabla de filas y columnas.
+- Para crear una matriz 2D de números enteros se utiliza la siguiente sintaxis:
+
+```c
+int matrix[2][3] = { {1, 4, 2}, {3, 6, 8} };
+```
+
+- La primera dimensión representa el número de filas [2], mientras que la segunda dimensión representa el número de columnas [3].
+- Los valores se colocan en orden de filas y se pueden visualizar así:
+
+|       | **Column 0** | **Column 1** | **Column 2** |
+|-------|--------------|--------------|--------------|
+| Row 0 | 1	           | 4            | 2            |
+| Row 1 | 3	           | 6            | 8            |
+
+### Acceder a los elementos de una matriz 2D
+
+- Para acceder a un elemento de una matriz bidimensional se debe especificar el número de índice tanto de la fila como de la columna.
+- Esta declaración accede al valor del elemento en la primera fila (0) y la tercera columna (2) de la matriz.
+
+```c
+int matrix[2][3] = { {1, 4, 2}, {3, 6, 8} };
+
+printf("%d", matrix[0][2]);  // Outputs 2
+```
+
+### Cambiar elementos en una matriz 2D
+
+- Para cambiar el valor de un elemento, consulte el número de índice del elemento en cada una de las dimensiones:
+- El siguiente ejemplo cambia el valor del elemento en la primera fila (0) y la primera columna (0):
+
+```c
+int matrix[2][3] = { {1, 4, 2}, {3, 6, 8} };
+matrix[0][0] = 9;
+
+printf("%d", matrix[0][0]);  // Now outputs 9 instead of 1
+```
+
+### Recorrer una matriz 2D
+
+- Para recorrer una matriz multidimensional se necesita un bucle para cada una de las dimensiones de la matriz.
+- El siguiente ejemplo genera todos los elementos de la matriz:
+
+```c
+int matrix[2][3] = { {1, 4, 2}, {3, 6, 8} };
+
+int i, j;
+for (i = 0; i < 2; i++) {
+  for (j = 0; j < 3; j++) {
+    printf("%d\n", matrix[i][j]);
+  }
+}
+```
+
+
+
+
+
+
+
+
+
+
