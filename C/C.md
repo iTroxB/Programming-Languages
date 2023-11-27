@@ -73,7 +73,7 @@ int main() {
 }
 ```
 
-### Nueva línea 
+### Nueva línea
 
 - Para insertar una nueva línea, puedes usar el carácter \n:
 
@@ -113,7 +113,7 @@ int main() {
 - **\n** Agrega un salto de línea
 - **\n\n** Agrega una línea en blanco
 - **\t** Agrega un tabulado al comienzo de la línea
-- **\\** Inserta un carácter de barra invertida (\)	
+- **\\** Inserta un carácter de barra invertida (\)
 - **\"** Inserta un carácter de comilla doble
 
 ## **C Comments**
@@ -642,7 +642,7 @@ bool isFishTasty = false;
 // Return boolean values
 printf("%d", isProgrammingFun);   // Returns 1 (true)
 printf("%d", isFishTasty);        // Returns 0 (false)
-````
+```
 
 ### Comparar valores y variables
 
@@ -711,7 +711,6 @@ if (20 > 18) {
 - También se pueden probar variables para probar si x es mayor que y (usando el operador **>**).
 
 ```c
-Ejemplo
 int x = 20;
 int y = 18;
 if (x > y) {
@@ -1128,7 +1127,7 @@ myNumbers[3] = 100;
 
 ## **Multidimensional Arrays in C**
 
-### Matricves multidimensionales
+### Matrices multidimensionales
 
 - Si se desea almacenar datos en forma tabular, como una tabla con filas y columnas, se debe usar una matriz multidimensional.
 - Estas básicamente son una matriz de matrices.
@@ -1190,12 +1189,212 @@ for (i = 0; i < 2; i++) {
 }
 ```
 
+## **Strings in C**
+
+### Strings
+
+- Los strings se utilizan para almacenar texto/caracteres. Por ejemplo, "Hola mundo" es una cadena de caracteres.
+- A diferencia de muchos otros lenguajes de programación, C no tiene un tipo String para crear fácilmente variables de cadena. En su lugar, debes usar el tipo **chart** y crear una matriz de caracteres para crear un string:
+
+```c
+char greetings[] = "Hello World!";
+```
+
+- Para generar una string, se puede utilizar la función **printf()** junto con el especificador de formato **%s** para indicarle a C que ahora estamos trabajando con strings:
+
+```c
+char greetings[] = "Hello World!";
+printf("%s", greetings);
+```
+
+### Strings de acceso
+
+- Dado que los strings son en realidad matrices en C, se puede acceder a un string consultando su número de índice entre corchetes [ ].
+
+```c
+char greetings[] = "Hello World!";
+printf("%c", greetings[0]);
+```
+
+### Modificar strings
+
+- Para cambiar el valor de un carácter específico en un string, consulte el número de índice y utilice comillas simples:
+
+```c
+char greetings[] = "Hello World!";
+greetings[0] = 'J';
+printf("%s", greetings);
+// Outputs Jello World! instead of Hello World!
+```
+
+### Bucle a través de un string
+
+- También se puede recorrer los caracteres de un string¿, usando un bucle **for**:
+
+```c
+char carName[] = "Volvo";
+int i;
+
+for (i = 0; i < 5; ++i) {
+  printf("%c\n", carName[i]);
+}
+```
+
+### Otra forma de crear cadenas
+
+- En los ejemplos anteriores, se ha utilizado un "literal de cadena" para crear una variable de string. Esta es la forma más sencilla de crear un string en C.
+- POr otro lado, se debe tener en cuenta que se puede crear un string con un conjunto de caracteres. Este ejemplo producirá el mismo resultado que el ejemplo al principio de esta página:
+
+```c
+char greetings[] = {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!', '\0'};
+printf("%s", greetings);
+```
+
+**Nota:** ¿Por qué incluimos el **\0** al final? Esto se conoce como "carácter de terminación nulo" y debe incluirse al crear strings utilizando este método. Le dice a C que este es el final del string.
+
+### Diferencias
+
+- La diferencia entre las dos formas de crear strings es que el primer método es más fácil de escribir y no es necesario incluir el carácter **\0**, ya que C lo hará por usted.
+- Se debe tener en cuenta que el tamaño de ambas matrices es el mismo: ambas tienen 13 caracteres (por cierto, el espacio también cuenta como un carácter), incluido el carácter **\0**:
+
+```c
+char greetings[] = {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!', '\0'};
+char greetings2[] = "Hello World!";
+
+printf("%lu\n", sizeof(greetings));   // Outputs 13
+printf("%lu\n", sizeof(greetings2));  // Outputs 13
+```
+
+## **Special character in C**
+
+### Strings y Caracteres especiales
+
+- Debido a que un string debe escribirse entre comillas, C malinterpretará esta cadena y generará un error:
+
+```c
+char txt[] = "We are the so-called "Vikings" from the north.";
+```
+
+- La solución para evitar este problema es utilizar el carácter de escape de barra invertida .
+- El carácter de escape de barra invertida (**\\**) convierte los caracteres especiales en caracteres de cadena:
 
 
+| **Escape character** | **Result** | **Description**|
+|----------------------|------------|----------------|
+| \\'                  | '          | Single quote   |
+| \\"                  | "          | Double quote   |
+| \\\\                 | \\         | Backslash      |
 
+- La secuencia \\"  inserta una comilla doble en una cadena:
 
+```c
+char txt[] = "We are the so-called \"Vikings\" from the north.";
+```
 
+- La secuencia \\'  inserta una comilla simple en una cadena:
 
+```c
+char txt[] = "It\'s alright.";
+```
 
+- La secuencia \\\\  inserta una única barra invertida en una cadena:
 
+```c
+char txt[] = "The character \\ is called backslash.";
+```
 
+- Otros caracteres de escape populares en C son:
+
+| **Escape character** | **Result** |
+|----------------------|------------|
+| \\n                  | New line   |
+| \\t                  | Tab        |
+| \\0                  | Null       |
+
+## **String Functions in C**
+
+### Funciones de cadena
+
+- C también tiene muchas funciones de cadena útiles, que pueden usarse para realizar ciertas operaciones con strings.
+- Para usarlos, se debe incluir la librería <string.h> en el encabezado del programa:
+
+```c
+#include <string.h>
+```
+
+### Longitud de un string
+
+- Por ejemplo, para obtener la longitud de un string, se puede usar la función **strlen()**:
+
+```c
+char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+printf("%d", strlen(alphabet));
+```
+
+- En el capítulo **Strings in C**, solíamos sizeofobtener el tamaño de una cadena/matriz.
+- Se debe tener en cuenta que **sizeof** y **strlen** se comportan de manera diferente, ya que **sizeof** también incluye el carácter **\0** al contar:
+
+```c
+char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+printf("%d", strlen(alphabet));   // 26
+printf("%d", sizeof(alphabet));   // 27
+```
+
+- También es importante saber que **sizeof** siempre devolverá el tamaño de la memoria (en bytes), y no la longitud real de la cadena:
+
+```c
+char alphabet[50] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+printf("%d", strlen(alphabet));   // 26
+printf("%d", sizeof(alphabet));   // 50
+```
+
+### Concatenar strings
+
+- Para concatenar (combinar) dos strings, puede utilizar la función **strcat()**:
+
+```c
+char str1[20] = "Hello ";
+char str2[] = "World!";
+
+// Concatenate str2 to str1 (result is stored in str1)
+strcat(str1, str2);
+
+// Print str1
+printf("%s", str1);
+```
+
+- Se debe tener en cuenta que el tamaño de **str1** debe ser lo suficientemente grande como para almacenar el resultado de las dos cadenas combinadas (20 en el ejemplo).
+
+### Copiar strings
+
+- Para copiar el valor de un string en otro, se puede usar la función **strcpy()**:
+
+```c
+char str1[20] = "Hello World!";
+char str2[20];
+
+// Copy str1 to str2
+strcpy(str2, str1);
+
+// Print str2
+printf("%s", str2);
+```
+
+- Se debe tener en cuenta que el tamaño de **str2** debe ser lo suficientemente grande como para almacenar la cadena copiada (20 en el ejemplo).
+
+### Comparar strings
+
+- Para comparar dos strings, puede utilizar la función **strcmp(**)**.
+- Esta devolverá 0 si las dos strings son iguales; en caso contrario, un valor que no es 0:
+
+```c
+char str1[] = "Hello";
+char str2[] = "Hello";
+char str3[] = "Hi";
+
+// Compare str1 and str2, and print the result
+printf("%d\n", strcmp(str1, str2));  // Returns 0 (the strings are equal)
+
+// Compare str1 and str3, and print the result
+printf("%d\n", strcmp(str1, str3));  // Returns -4 (the strings are not equal)
+```
