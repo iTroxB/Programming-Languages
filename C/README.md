@@ -70,3 +70,27 @@
   * Acceder a los elementos de una matriz 2D
   * Cambiar elementos en una matriz 2D
   * Recorrer una matriz 2D
+- Strings in C
+  * Strings
+  * Strings de acceso
+  * Modificar strings
+  * Bucle a través de un string
+  * Otra forma de crear strings
+  * Diferencias
+- Special character in C
+  * Strings y caracteres especiales
+- String Functions in C
+  * Funciones de strings
+  * Longitud de un string
+  * Concatenar strings
+  * Copiar strings
+  * Comparar strings
+  * Entrada del usuario
+  * Múltiples entradas
+  * Tomar entrada de strings
+- Memory Address in C
+  * Dirección de memoria
+  * ¿Por qué es útil saber la dirección de la memoria?
+- Pointers in C
+  * Creando punteros
+  * Desreferencia
