@@ -361,7 +361,8 @@ double myDouble = 19.99; // 8 bytes & %lf
 | %lf                  | double                                                                      |
 | %c                   | char                                                                        |
 | %s                   | Used for strings (text), which you will learn more about in a later chapter |
-| %lu                  | unsigned long (sizeof)                                                      |
+| %lu                  | unsigned long (sizeof)|
+| %p                   | pointer values |
 
 ### Establecer precisión decimal
 
@@ -1398,3 +1399,188 @@ printf("%d\n", strcmp(str1, str2));  // Returns 0 (the strings are equal)
 // Compare str1 and str3, and print the result
 printf("%d\n", strcmp(str1, str3));  // Returns -4 (the strings are not equal)
 ```
+
+## **User Input in C**
+
+### Entrada del usuario
+
+- **printf()** se utiliza para generar valores en C.
+- Para obtener información del usuario se puede utilizar la función **scanf()**:
+
+```c
+// Create an integer variable that will store the number we get from the user
+int myNum;
+
+// Ask the user to type a number
+printf("Type a number: \n");
+
+// Get and save the number the user types
+scanf("%d", &myNum);
+
+// Output the number the user typed
+printf("Your number is: %d", myNum);
+```
+
+- La función **scanf()** toma dos argumentos: el especificador de formato de la variable (**%d**) y el operador de referencia (**&myNum**) que almacena la dirección de memoria de la variable.
+
+### Múltiples entradas
+
+- La función **scanf()** también permite múltiples entradas:
+
+```c
+// Create an int and a char variable
+int myNum;
+char myChar;
+
+// Ask the user to type a number AND a character
+printf("Type a number AND a character and press enter: \n");
+
+// Get and save the number AND character the user types
+scanf("%d %c", &myNum, &myChar);
+
+// Print the number
+printf("Your number is: %d\n", myNum);
+
+// Print the character
+printf("Your character is: %c\n", myChar);
+```
+
+### Tomar entrada de cadena
+
+- También puede obtener una cadena ingresada por el usuario:
+
+```c
+// Create a string
+char firstName[30];
+
+// Ask the user to input some text
+printf("Enter your first name: \n");
+
+// Get and save the text
+scanf("%s", firstName);
+
+// Output the text
+printf("Hello %s", firstName);
+```
+
+- **Nota:** Cuando trabaje con strings en **scanf()**, se debe especificar el tamaño de la cadena/matriz (usamos un número muy alto, 30 en el ejemplo, pero al menos se está seguros de que almacenará suficientes caracteres para el nombre), y no es necesario utilizar el operador de referencia (**&**).
+- Sin embargo, la función **scanf()** tiene algunas limitaciones: considera el espacio (espacios en blanco, tabulaciones, etc) como carácter final, lo que significa que sólo puede mostrar una sola palabra (incluso si escribe muchas palabras). Por ejemplo:
+
+```c
+char fullName[30];
+
+printf("Type your full name: \n");
+scanf("%s", &fullName);
+
+printf("Hello %s", fullName);
+
+// Type your full name: John Doe
+// Hello John
+```
+
+- Según el ejemplo anterior, se esperaría que el programa imprimiera "John Doe", pero solo imprime "John".
+- Por eso, cuando se trabaja con strings, se utiliza la función **fgets()** para leer una línea de texto. Se deben incluir los siguientes argumentos: el nombre de la variable de cadena sizeof(**string_name**) y el **stdin**:
+
+```c
+char fullName[30];
+
+printf("Type your full name: \n");
+fgets(fullName, sizeof(fullName), stdin);
+
+printf("Hello %s", fullName);
+
+// Type your full name: John Doe
+// Hello John Doe
+```
+
+- Se usa **scanf()** para obtener una sola palabra como entrada y **fgets()** para varias palabras.
+
+## **Memory Address in C**
+
+### Dirección de memoria
+
+- Cuando se crea una variable en C se le asigna una dirección de memoria interna.
+- La dirección de memoria es la ubicación donde se almacena la variable en la computadora.
+- Cuando se le asigna un valor a la variable, este se almacena en esta dirección de memoria.
+- Para acceder a él, se usa el operador de referencia (**&**) y el resultado representa dónde se almacena la variable:
+
+```c
+int myAge = 43;
+printf("%p", &myAge); // Outputs 0x7ffe5367e044
+```
+
+- **Nota:** La dirección de memoria está en formato hexadecimal (**0x...**). Probablemente no obtendrá el mismo resultado en su programa, ya que esto depende de dónde esté almacenada la variable en su computadora. También debe tener en cuenta que a **&myAge** se le llama **"puntero"**. Un puntero almacena la dirección de memoria de una variable como su valor. Para imprimir valores de puntero, se utiliza el especificador de formato **%p**.
+
+### ¿Por qué es útil saber la dirección de la memoria?
+
+- Los punteros son importantes en C porque nos permiten manipular los datos en la memoria de la computadora. Gracias a esto es que se puede reducir el código y mejorar el rendimiento.
+- Los punteros son una de las cosas que distinguen a C de otros lenguajes de programación, como Python y Java.
+
+## **Pointers in C**
+
+### Creando punteros
+
+- Se puede obtener la dirección de memoria de una variable con el operador de referencia "&":
+
+```c
+int myAge = 43; // an int variable
+
+printf("%d", myAge);  // Outputs the value of myAge (43)
+printf("%p", &myAge); // Outputs the memory address of myAge (0x7ffe5367e044)
+```
+
+- Un puntero es una variable que almacena la dirección de memoria de otra variable como su valor.
+- Una variable de puntero apunta a un tipo de datos (como int) del mismo tipo y se crea con el operador **\***.
+- La dirección de la variable con la que estás trabajando se asigna al puntero:
+
+```c
+int myAge = 43;     // An int variable
+int* ptr = &myAge;  // A pointer variable, with the name ptr, that stores the address of myAge
+
+// Output the value of myAge (43)
+printf("%d\n", myAge);
+
+// Output the memory address of myAge (0x7ffe5367e044)
+printf("%p\n", &myAge);
+
+// Output the memory address of myAge with the pointer (0x7ffe5367e044)
+printf("%p\n", ptr);
+```
+
+- Cree una variable de puntero con el nombre ptr, que apunte a una intvariable ( myAge). Tenga en cuenta que el tipo de puntero debe coincidir con el tipo de variable con la que está trabajando ( inten nuestro ejemplo).
+- Utilice el &operador para almacenar la dirección de memoria de la myAgevariable y asígnela al puntero.
+- Ahora ptrcontiene el valor de la dirección de memoria de **myAge**.
+
+### Desreferencia
+
+- En el ejemplo anterior, se usó la variable de puntero para obtener la dirección de memoria de una variable (usada junto con el operador & de referencia .
+- También puede obtener el valor de la variable a la que apunta el puntero utilizando el *operador (el operador de desreferencia ):
+
+```c
+int myAge = 43;     // Variable declaration
+int* ptr = &myAge;  // Pointer declaration
+
+// Reference: Output the memory address of myAge with the pointer (0x7ffe5367e044)
+printf("%p\n", ptr);
+
+// Dereference: Output the value of myAge with the pointer (43)
+printf("%d\n", *ptr);
+```
+
+- Tenga en cuenta que el signo **\*** puede resultar confuso aquí, ya que hace dos cosas diferentes en nuestro código:
+
+  * Cuando se usa en la declaración ( int* ptr), crea una variable de puntero .
+  * Cuando no se utiliza en la declaración, actúa como operador de desreferencia .
+
+- Es bueno saberlo: hay dos formas de declarar variables de puntero en C:
+
+```c
+int* myNum;
+int *myNum;
+```
+
+- Notas sobre sugerencias
+
+- Los punteros son una de las cosas que distinguen a C de otros lenguajes de programación, como Python y Java .
+- Son importantes en C porque nos permiten manipular los datos en la memoria de la computadora. Esto puede reducir el código y mejorar el rendimiento. Si está familiarizado con estructuras de datos como listas, árboles y gráficos, debe saber que los punteros son especialmente útiles para implementarlos. Y a veces incluso hay que utilizar punteros, por ejemplo cuando se trabaja con archivos .
+- Cuidado; Los punteros deben manejarse con cuidado, ya que es posible dañar los datos almacenados en otras direcciones de memoria.
