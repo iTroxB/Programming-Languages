@@ -361,8 +361,8 @@ double myDouble = 19.99; // 8 bytes & %lf
 | %lf                  | double                                                                      |
 | %c                   | char                                                                        |
 | %s                   | Used for strings (text), which you will learn more about in a later chapter |
-| %lu                  | unsigned long (sizeof)|
-| %p                   | pointer values |
+| %lu                  | unsigned long (sizeof)                                                      |
+| %p                   | pointer values                                                              |
 
 ### Establecer precisión decimal
 
